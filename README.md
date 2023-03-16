@@ -1,8 +1,8 @@
 # Glacier Tax 1099-B Stock Transactions Helper
 
-## Update 2019
 
-I don't have access to Glacier anymore therefore cannot really maintain this repo. This plugin has helped hundreds of people like you. If you find this helpful, please contribute. Thank you!
+
+
 
 ## Description
 
@@ -12,7 +12,6 @@ Chrome extension for helping nonresident alien fill in the 1099-B stock transact
 
 * ~~Install it here: https://chrome.google.com/webstore/detail/glacier-tax-1099-b-stock/mdnkfhpikjbgedlenpdnkhnfhdaohfcm~~
 * This plugin has been unpublished from the Chrome Web Store because I am unable to verify this functionality any more.
-* To use it, download this repo and install it as unpacked package. Instructions: https://stackoverflow.com/a/24577660
 
 ## Features
 
