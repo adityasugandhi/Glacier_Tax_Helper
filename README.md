@@ -9,9 +9,7 @@
 Chrome extension for helping nonresident alien fill in the 1099-B stock transactions by importing transactions from local CSV file
 
 ## Installation
-
-* ~~Install it here: https://chrome.google.com/webstore/detail/glacier-tax-1099-b-stock/mdnkfhpikjbgedlenpdnkhnfhdaohfcm~~
-* This plugin has been unpublished from the Chrome Web Store because I am unable to verify this functionality any more.
+Load the Unpacked github-repo directly into your chrome extension.
 
 ## Features
 
@@ -23,7 +21,6 @@ Chrome extension for helping nonresident alien fill in the 1099-B stock transact
 
 * You may use Excel or Numbers to edit and then select to export as CSV format
 * You may use online OCR software to help you convert non-selectable 1099 PDF to Excel
-* If you use Robinhood, you may use https://jiahaoshan.github.io/Robinhood-1099-B-Transactions-Export-Tool/ to help you export transactions to CSV.
 * Format for acquired date or sold date: MM/DD/YYYY
 * CSV Format Example
   <img src="https://lh3.googleusercontent.com/k8PNDDnTFJ2z4VOiSsPIUxDNSabxhn4nICzgoE_42nuMvlV2zt0zpe2_5_XwZCW2AHov9g834A=s1280-h800-e365-rw">
