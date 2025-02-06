@@ -1,33 +1,80 @@
-# Glacier Tax 1099-B Stock Transactions Helper
+# Glacier Tax Helper
 
-
-
-
-
-## Description
-
-Chrome extension for helping nonresident alien fill in the 1099-B stock transactions by importing transactions from local CSV file
-
-## Installation
-Load the Unpacked github-repo directly into your chrome extension.
+A Chrome extension to help nonresident aliens fill in 1099-B stock transactions by importing from CSV files.
 
 ## Features
 
-* Automatically validate and fill in 1099 transaction details with imported transaction details (csv)
-* CSV should follow the headers 'name,acquired,sold,proceeds,cost'
-* Now it enables you to auto fill multiple 1099-B forms
+- Import stock transactions from CSV files
+- Automatically fill in Glacier Tax forms
+- Support for multiple CSV formats
+- Easy-to-use interface
 
-## Tips
+## Installation
 
-* You may use Excel or Numbers to edit and then select to export as CSV format
-* You may use online OCR software to help you convert non-selectable 1099 PDF to Excel
-* Format for acquired date or sold date: MM/DD/YYYY
-* CSV Format Example
-  <img src="https://lh3.googleusercontent.com/k8PNDDnTFJ2z4VOiSsPIUxDNSabxhn4nICzgoE_42nuMvlV2zt0zpe2_5_XwZCW2AHov9g834A=s1280-h800-e365-rw">
-  <img src="https://lh3.googleusercontent.com/lDdUFP9tIUGoKjS2R-fd6oQtLnMqw58OkYT0n6N8TG08RMLTRpZG0jW_d2SA5ynR6jdQaSkNVw=s1280-h800-e365-rw">
-  <img src="https://lh3.googleusercontent.com/Jw8WK7jymMCsVztOa3IZQq3rWpo5_BRKVhKBg044jfZH30B7X54VsKtIb1iDD-Ioa9b2KVXw=s1280-h800-e365-rw">
-  <img src="https://lh3.googleusercontent.com/I2z1f8Kpf6WpZlIa0Z2iRmJcxliiSp7YmYDwjk7VE1TW6fvO38SXCYoNvySe9L-BiOtcWzGCig=s1280-h800-e365-rw">
-* Live Demo
-  ![Live Demo](img/Glacier-Tax-Prep-Form-1099-B-Stock-Transactions-Importer-v0.3.2.gif)
+1. Clone the repository:
+\`\`\`bash
+git clone https://github.com/yourusername/glacier-tax-helper.git
+cd glacier-tax-helper
+\`\`\`
 
-* Disclaimer: This is NOT an official app from Glacier Tax.
+2. Install dependencies:
+\`\`\`bash
+npm install
+\`\`\`
+
+3. Build the extension:
+\`\`\`bash
+npm run build
+\`\`\`
+
+4. Load the extension in Chrome:
+   - Open Chrome and navigate to `chrome://extensions/`
+   - Enable "Developer mode"
+   - Click "Load unpacked" and select the `dist` directory
+
+## Development
+
+- Start development server:
+\`\`\`bash
+npm start
+\`\`\`
+
+- Run tests:
+\`\`\`bash
+npm test
+\`\`\`
+
+- Lint code:
+\`\`\`bash
+npm run lint
+\`\`\`
+
+- Format code:
+\`\`\`bash
+npm run format
+\`\`\`
+
+## Project Structure
+
+\`\`\`
+src/
+├── components/    # Reusable UI components
+├── background/    # Background script
+├── content/       # Content scripts
+├── popup/         # Popup UI
+├── options/       # Options page
+├── utils/         # Shared utilities
+└── types/         # TypeScript type definitions
+\`\`\`
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin feature/my-new-feature`
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

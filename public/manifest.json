@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Glacier Tax Helper",
+  "version": "1.0.0",
+  "description": "Easily import and fill 1099-B stock transactions in Glacier Tax forms",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.glaciertax.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.glaciertax.com/IRSForm/StockTransaction*"],
+      "js": ["vendor.js", "content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
