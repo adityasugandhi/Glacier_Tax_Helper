@@ -2,11 +2,13 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'source-map',
   entry: {
     background: './src/background/index.ts',
     content: './src/content/index.ts',
     popup: './src/popup/index.tsx',
-    options: './src/options/index.tsx'
+    inject: './src/inject/inject.ts'
   },
   module: {
     rules: [
@@ -24,21 +26,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [
-                  require('tailwindcss'),
-                  require('autoprefixer'),
-                ],
-              },
-            },
-          },
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
@@ -56,14 +44,11 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: 'public', to: '.' },
+        { from: 'public' },
       ],
     }),
   ],
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-      name: 'vendor',
-    },
-  },
+    splitChunks: false // Disable code splitting
+  }
 };

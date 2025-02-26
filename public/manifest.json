@@ -1,14 +1,28 @@
 {
   "manifest_version": 3,
-  "name": "Glacier Tax Helper",
-  "version": "1.0.0",
-  "description": "Easily import and fill 1099-B stock transactions in Glacier Tax forms",
+  "name": "Glacier Tax Transaction Importer",
+  "version": "0.4.0",
+  "description": "Automate 1099-B transaction imports for Glacier Tax",
   "permissions": [
-    "storage",
-    "activeTab"
+    "activeTab",
+    "tabs",
+    "storage"
   ],
   "host_permissions": [
-    "https://www.glaciertax.com/*"
+    "https://www.glaciertax.com/*",
+    "https://*.glaciertax.com/*",
+    "https://www.1040nrezpro.com/*",
+    "https://*.1040nrezpro.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.glaciertax.com/*", "https://*.glaciertax.com/*", "https://www.1040nrezpro.com/*", "https://*.1040nrezpro.com/*"],
+      "js": ["content.js", "inject.js"],
+      "run_at": "document_idle"
+    }
   ],
   "action": {
     "default_popup": "popup.html",
@@ -18,20 +32,12 @@
       "128": "icons/icon128.png"
     }
   },
-  "options_page": "options.html",
-  "background": {
-    "service_worker": "background.js",
-    "type": "module"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://www.glaciertax.com/IRSForm/StockTransaction*"],
-      "js": ["vendor.js", "content.js"]
-    }
-  ],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
   }
 }
